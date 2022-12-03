@@ -28,7 +28,12 @@ Lambda ist ein Datenverarbeitungsservice mit dem man Code ausführen kann ohne e
 
 #### Benötigte CLI Befehle Lambda
 
->`aws lambda create-function --function-name SPWdog --runtime python3.9 --role`
+>`aws lambda create-function --function-name SPWdog --runtime python3.9 --role arn:aws:iam::524282514575:role/LabRole`
+
+### EventBridge
+#### Was ist Event Bridge?
+
+Event Bridge ist ein Service um Applikationen und Instanzen innerhalb der Cloud über gewisse Ereignisse zu steuern.
 
 ### AWS S3 Bucket
 
