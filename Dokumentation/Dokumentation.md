@@ -17,6 +17,12 @@ Man kann daher von überall her auf die IDE zugreifen sofern man Zugang zum AWS 
 #### AWS CLI
 Die Dienste werden mittel AWS CLI in die Cloud deployed. Cloud9 hat die CLI bereits integriert.
 
+#### MS Visual Studio Code
+Das Meite habe ich aus Bequemlichkeit mit VSC erstellt.
+
+#### Github Desktop
+
+Um die Änderungen bequem zu synchronisieren.
 
 ## Installation
 
@@ -38,6 +44,9 @@ Event Bridge ist ein Service um Applikationen und Instanzen innerhalb der Cloud 
 ### AWS S3 Bucket
 
 #### Was ist AWS S3 Bucket?
+
+Ein Online-Speicherdienst von AWS um Daten in der Cloud zu speichern und zu verwalten. Die Daten werden in Buckets gespeichert also virtuellen Speicherbhältern die über eine URL aufrufbar sind.
+
 
 ### AWS SNS (Simple Notification Service)
 
