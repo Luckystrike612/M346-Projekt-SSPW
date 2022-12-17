@@ -51,11 +51,16 @@ Ein Online-Speicherdienst von AWS um Daten in der Cloud zu speichern und zu verw
 ### AWS SNS (Simple Notification Service)
 
 #### Was ist AWS SNS?
-
+SNS ist ein vollständig verwalteter Dienst mit dem man zuverlässig und schnell Millionen von Nachrichten versenden kann.
 
 ## Test
 
+Nachdem ich die ganze Umgebung erstellt hatte SNS, Lambda, Bucket und die Evenbridge. Habe ich es in der Cloud Konsole getestet. 
+Da der Stock Price von Apple sich nicht so rege bewegt wie der einer Kryptowährung habe ich in der Lambda Funktion in der Zeile 82 current_stockprice durch eine Zahl ersetzt die vom momenentanen Stock Price abweicht. Innerhalb der nächsten Minute bekam ich dann eine Nachricht auf mein Handy und wusste somit das Ganze funktioniert.
+
 ## Betriebsanweisungen
+Um Die Funktionsweise nachzustellen müssen Sie die
+
 
 ## Reflexion
 

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-aws s3api create-bucket --bucket SPWD-Bucket-LT-INP2b --region us-east-1
+s3bucket_name="SPWDbucket13425"
+aws s3api create-bucket --bucket ${s3bucket_name} --region us-east-1

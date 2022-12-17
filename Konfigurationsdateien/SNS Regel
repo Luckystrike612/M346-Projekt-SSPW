@@ -1,3 +1,0 @@
-#!/bin/bash
-
-aws events put-rule -schedule-expression "cron(0/1 * ? * MON-FRI *)" --name SSPW-SNS

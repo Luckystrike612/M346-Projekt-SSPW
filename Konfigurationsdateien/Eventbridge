@@ -1,0 +1,3 @@
+#!/bin/bash
+rule_name="SSPWSNS"
+Rule_Arn=`aws events put-rule --schedule-expression "cron(0/1 * ? * MON-FRI *)" --name ${rule_name} --query RuleArn | tr -d '"'`

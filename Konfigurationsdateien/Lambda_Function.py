@@ -24,7 +24,7 @@ def send_notification(current_price, last_price, change, action):
     try: 
         response = sns_client.publish(
             TopicArn="arn:aws:sns:us-east-1:524282514575:testforsspw",
-            Message="Kurs",
+            Message=message,
             Subject=subject,
         )['MessageId']
     except ClientError as e:
@@ -32,7 +32,7 @@ def send_notification(current_price, last_price, change, action):
 
 def get_current_stock_price(symbol):
     '''
-        TODO: Funktionsbeschreibung
+        TODO: Diese Funktion ruft den aktuellen Preis der Aktie über die Yahoo Finance API ab.
     '''
     url = f'https://query1.finance.yahoo.com/v11/finance/quoteSummary/AAPL'
     payload = {'modules': 'financialData'}
@@ -62,7 +62,7 @@ def get_stored_data(symbol):
 
 def store_data(symbol, data):
     '''
-        TODO: Funktionsbeschreibung
+        TODO: Speichert die abgerufenen Daten im Bucket ab.
     '''
     content = json.dumps(data, sort_keys=True, indent=4)
     response = s3_client.put_object(Body=str.encode(content), Bucket='testbucketforsspw', Key=f'{symbol}.json')
@@ -87,7 +87,7 @@ def lambda_handler(event, context):
     else:
         action = "decrease"
 
-    if abs(change) > 0.01:
+    if abs(change) > 0.1:
         send_notification(current_price, last_price, change, action)
         data['last-price'] = current_price
         store_data(symbol, data)
@@ -99,7 +99,7 @@ def lambda_handler(event, context):
     print(f'action {action}')
     
         
-    # TODO: Speichern des aktuellen Werts
-    # TODO: Benachrichtigung falls notwendig
+    # TODO: Speichern des aktuellen Werts -erledigt
+    # TODO: Benachrichtigung falls notwendig -erledigt
     
     return { 'current-price': current_price, 'last-price': last_price }
