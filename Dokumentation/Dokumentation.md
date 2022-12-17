@@ -32,10 +32,6 @@ Um die Änderungen bequem zu synchronisieren.
 
 Lambda ist ein Datenverarbeitungsservice mit dem man Code ausführen kann ohne einen Server bereitstellen und verwalten zu müssen.
 
-#### Benötigte CLI Befehle Lambda
-
->`aws lambda create-function --function-name SPWdog --runtime python3.9 --role arn:aws:iam::524282514575:role/LabRole`
-
 ### EventBridge
 #### Was ist Event Bridge?
 
@@ -59,7 +55,7 @@ Nachdem ich die ganze Umgebung erstellt hatte SNS, Lambda, Bucket und die Evenbr
 Da der Stock Price von Apple sich nicht so rege bewegt wie der einer Kryptowährung habe ich in der Lambda Funktion in der Zeile 82 current_stockprice durch eine Zahl ersetzt die vom momenentanen Stock Price abweicht. Innerhalb der nächsten Minute bekam ich dann eine Nachricht auf mein Handy und wusste somit das Ganze funktioniert.
 
 ## Betriebsanweisungen
-Um Die Funktionsweise nachzustellen müssen Sie die
+ToDo: Anweisungen für die Inbetriebnahme erstellen.
 
 
 ## Reflexion

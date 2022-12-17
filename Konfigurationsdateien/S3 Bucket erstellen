@@ -1,4 +1,7 @@
 #!/bin/bash
 
-s3bucket_name="SPWDbucket13425"
-aws s3api create-bucket --bucket ${s3bucket_name} --region us-east-1
+s3bucket_name="testttcsgdssfsd"
+aws s3 rb s3://${s3bucket_name} --force
+aws s3 mb s3://${s3bucket_name} --region us-east-1
+
+echo $s3bucket_name

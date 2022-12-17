@@ -1,3 +1,9 @@
 #!/bin/bash
+
+
 rule_name="SSPWSNS"
 Rule_Arn=`aws events put-rule --schedule-expression "cron(0/1 * ? * MON-FRI *)" --name ${rule_name} --query RuleArn | tr -d '"'`
+
+aws lambda add-permission --function_name ${lambda_f_name} --statement-id  ${rule_name} --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn ${Rule_Arn}
+
+aws events put-targets --rule rule_name --targets "Id"="66","Arn"="${Lambda_Arn}"
