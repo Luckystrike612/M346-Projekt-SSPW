@@ -5,7 +5,7 @@
 ***Klasse: INP2b***
 ## Einleitung
 
-Dies ist die Dokumentation zu meinem projekt um einen Stock Price Watchdog zu erstellen und betreiben. 
+Dies ist die Dokumentation zu meinem Projekt um einen Stock Price Watchdog zu erstellen und betreiben. 
 In der Dokumentation hier wird alles beschrieben die benötigten Befehle und Hilfsmittel aufgelistet
 und zu den jeweiligen Codes verlinkt.
 
@@ -53,12 +53,23 @@ SNS ist ein vollständig verwalteter Dienst mit dem man zuverlässig und schnell
 
 Nachdem ich die ganze Umgebung erstellt hatte SNS, Lambda, Bucket und die Evenbridge. Habe ich es in der Cloud Konsole getestet. 
 Da der Stock Price von Apple sich nicht so rege bewegt wie der einer Kryptowährung habe ich in der Lambda Funktion in der Zeile 82 current_stockprice durch eine Zahl ersetzt die vom momenentanen Stock Price abweicht. Innerhalb der nächsten Minute bekam ich dann eine Nachricht auf mein Handy und wusste somit das Ganze funktioniert.
+Eine noch bessere Methode zum testen ist das abändern der if Abfrage in der Zeile 90 von > 0.1 zu == 0 so sendet er eine Nachricht wenn sich nichts am Stock Preis ändert.
+
+Ich habe das Ganze Skript in Betrieb genommen und nach einigen Anpassungen funktioniert nun das Ganze Skript.
 
 ## Betriebsanweisungen
-ToDo: Anweisungen für die Inbetriebnahme erstellen.
+Um die Funktion in Betrieb zu nehmen sind folgende Schritte notwendig:
+1. Die Dateien [Skript](https://github.com/Luckystrike612/M346-Projekt-SSPW/blob/97333a3e35a2dfcd46dc1b7ddc19d61cedf3f3ab/Konfigurationsdateien/Skript), [Lambda_Function](https://github.com/Luckystrike612/M346-Projekt-SSPW/blob/97333a3e35a2dfcd46dc1b7ddc19d61cedf3f3ab/Konfigurationsdateien/Lambda_Function.py) und [requests-layer.zip](https://github.com/Luckystrike612/M346-Projekt-SSPW/blob/97333a3e35a2dfcd46dc1b7ddc19d61cedf3f3ab/Konfigurationsdateien/requests-layer.zip) herunter laden oder via git pullen.
+2. Danach diese 3 Dateien in einem seperatem Ordner speichern (auf jeden Fall nicht im git Ordner so das die Änderungen nicht nachverfolgt werden).
+3. das Skript öffnen un die Variablen anpassen nach eigenem Wunsch.
+4. Das Skript ausführen, wenn nun alles geklappt hat und richtig ausgeführt wurde ist die Funktion erstellt und sie sollten eine Nachricht an die Email Adresse erhalten, welche Sie in dem Skript angegeben haben. Darin ist ein Bestätigungslink, klicken Sie auf diesen.
+5. Nun ist alles fertig und die Benachrichtigung aktiviert wenn sich die Aktie um mehr als 0.1 Prozent Punkte ändert kriegen Sie eine Nachricht.
+
+Bitte beachten: Die Nachricht wird nur Montags- Freitags asugelöst. 
 
 
 ## Reflexion
 
+Es hat mir echt viel spass gemacht diese Projekt zu verwirklichen. ich finde das Ganze Thema Cloud Computing aber auch unheimlich spannend weil es einfach sehr viel effizienter und Ressourcenschonender ist als das herkömmliche On Premise System. Vermutlich werden wir in Zukunft nur noch unsere Smartphones für die Bildübertragung nutzen und grössere Rechenleistung aus der Cloud beziehen. Immer potenter werdende Übertragungswege wie 5g und Glasfaser werden dies möglich machen.
 
 

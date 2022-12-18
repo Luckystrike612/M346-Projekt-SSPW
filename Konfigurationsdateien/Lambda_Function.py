@@ -19,7 +19,7 @@ def send_notification(current_price, last_price, change, action):
         Erstellt eine Nachricht mit angegebenen Informationen und versendet
         diese an ein existierendes SNS-Topic.
     '''
-    message = f"Stock price changed from {last_price} to {current_price}: {action} of {change} %"
+    message = f"Apple Stock price changed from {last_price} to {current_price}: {action} of {change} % Greetings Lukas Truniger INP2b"
     subject = "Stock price change"
     try: 
         response = sns_client.publish(

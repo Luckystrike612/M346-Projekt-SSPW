@@ -4,13 +4,28 @@
 
 
 # Zieldatei
-file="/Lambda_Function.py"
+file=Lambda_Function.py
 
 # Zu ersetzender Satz
 old_string="Hier Muss die ARN des Topics stehen"
 
 # Neuer Satz
 new_string="${topic_arn}"
+
+# Satz ersetzen
+sed -i "s/$old_string/$new_string/g" "$file"
+
+
+
+
+# Zieldatei
+file=Lambda_Function.py
+
+# Zu ersetzender Satz
+old_string="Hier muss der Name des S3 Buckets stehen"
+
+# Neuer Satz
+new_string="${s3bucketbucket}"
 
 # Satz ersetzen
 sed -i "s/$old_string/$new_string/g" "$file"

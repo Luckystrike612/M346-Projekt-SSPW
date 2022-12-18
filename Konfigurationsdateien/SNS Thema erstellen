@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-topic_name="SSPW"
+topic_name="SSPWSNS"
 topic_arn=`aws sns create-topic --name ${topic_name} --query TopicArn | tr -d '"'`
 
-email_adresse="lukas_truniger@outlook.com"
+email_adresse="lukas_truniger@outlook.com" 
 
 aws sns subscribe --topic-arn ${topic_arn} --protocol email --notification-endpoint ${email_adresse}
