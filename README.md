@@ -1,5 +1,12 @@
 # M346-Projekt-SSPW
 Serverless StockPriceWatchdog Projekt von Lukas Truniger INP2b.
+
+<strong>Willkommen zum Repository Für mein Projekt im Modul 346</strong>
+
+<strong>Bitte klicken Sie auf den link weiter unten um direkt in die Dokumentation und nochmal etwas weiter um direkt zur Betriebsanweisung zu kommen. Folgen Sie der Anleitung um den Serverless Stock Price Watchdog in Betrieb zu nehmen.</strong>
+
+
+
 ## Links:
 [***Direktlink zur Dokumentation***](Dokumentation/Dokumentation.md)
 
