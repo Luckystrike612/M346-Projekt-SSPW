@@ -1,4 +1,12 @@
 #!/bin/bash
+# Skript:	    Skript.sh 
+# Aufruf:	    bash Skript.sh
+# Beschreibung: Dieses Skript erstellt einen Stock Price Watch Dog in AWS Lambda.
+# Autor:	    Lukas Truniger
+# Version:	    1.0
+# Datum: 	    18.12.2022
+
+#START-------Innerhalb dieses Fensters können die Parameter festgelegt werden---WICHTIG!!! Die Email Adresse muss definitiv angepassst werden.-----------------
 
 #Hier wird der Name des Layers definiert. Kann man stehen lassen.
 layer_name="requests-layer"
@@ -10,20 +18,22 @@ lambda_f_name="SPWdog"
 rule_name="SSPWEvent"
 
 #Hier wird das Thema definiert für SNS.
-topic_name="SSPWSNS"
+topic_name="SSPW"
 
 #Hier Bitte die Email Adresse angeben auf welcher die Funktion die Nachrichten schicken soll.
-email_adresse="lukas_truniger@outlook.com" 
+email_adresse="Beispiel@beispiel.com" 
 
 #Der Name für den Bucket welcher den preis speichert. Er muss einzigartig sein und wird nicht öffentlich sein daher reicht eine wilde Kombination.
 #Falls ein Bucket mit diesem Namen bereits besteht wird er gelöscht also Vorsicht!
 s3bucket_name="testttcsgdssfsd"
 
+#ENDE-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 #Die nächste Zeile erstellt den SNS Topic für die Benachrichtigung
 topic_arn=`aws sns create-topic --name ${topic_name} --query TopicArn | tr -d '"'`
 
-
+#Python Code wird den Eingaben entsprechend angepasst:
 # Zieldatei
 file=Lambda_Function.py
 
@@ -35,8 +45,6 @@ new_string="${topic_arn}"
 
 # Satz ersetzen
 sed -i "s/$old_string/$new_string/g" "$file"
-
-
 
 
 # Zieldatei

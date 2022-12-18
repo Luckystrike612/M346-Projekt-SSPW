@@ -1,0 +1,14 @@
+
+
+
+
+#Tag für alle Befehle um nachvollziehen zu können welche Dienste für dieses Projekt sind.
+tag_name="SSPWD_TL_INP2b"
+#ENDE-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Hier wird ein Tag erstellt.
+aws create-resource --resource-type  --tags Key1=${tag_name}
+
+aws tag-resources --resource-arn-list "${layer_arn}" "${Lambda_Arn}" "${Rule_Arn}" "${topic_arn}" "arn:aws:s3:::${s3bucket_name}
+" --tags KeyName1=${tag_name}
+aws tag-resources --resource-arn-list "${Lambda_Arn}" "${Rule_Arn}" "arn:aws:s3:::${s3bucket_name}" --tags Key=${tag_value},Value=Lambda,Key=${tag_value},Value=Rule,Key=${tag_value},Value=Bucket

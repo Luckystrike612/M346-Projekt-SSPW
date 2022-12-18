@@ -7,7 +7,7 @@
 
 Dies ist die Dokumentation zu meinem Projekt um einen Stock Price Watchdog zu erstellen und betreiben. 
 In der Dokumentation hier wird alles beschrieben die benötigten Befehle und Hilfsmittel aufgelistet
-und zu den jeweiligen Codes verlinkt.
+und zu den jeweiligen Codes/Skripts verlinkt.
 
 ### Hilfsmittel
 #### Cloud9
@@ -31,6 +31,12 @@ Um die Änderungen bequem zu synchronisieren.
 #### Was ist Lambda?
 
 Lambda ist ein Datenverarbeitungsservice mit dem man Code ausführen kann ohne einen Server bereitstellen und verwalten zu müssen.
+
+### AWS Layers
+#### Was sind AWS Layers?
+
+Layers sind eine Erweiterung für AWS Lambda Funktionen, die zusätzliche Codebibliotheken, Dateien und andere Inhalte bereitstellen können.
+Somit kann man einen Layer mehreren Funktionen hinzufügen so das diese sie verwenden können um Inhalte und Code zu teilen. So muss er nicht für jede Funktion dupliziert werden.
 
 ### EventBridge
 #### Was ist Event Bridge?
@@ -65,11 +71,13 @@ Um die Funktion in Betrieb zu nehmen sind folgende Schritte notwendig:
 4. Das Skript ausführen, wenn nun alles geklappt hat und richtig ausgeführt wurde ist die Funktion erstellt und sie sollten eine Nachricht an die Email Adresse erhalten, welche Sie in dem Skript angegeben haben. Darin ist ein Bestätigungslink, klicken Sie auf diesen.
 5. Nun ist alles fertig und die Benachrichtigung aktiviert wenn sich die Aktie um mehr als 0.1 Prozent Punkte ändert kriegen Sie eine Nachricht.
 
-Bitte beachten: Die Nachricht wird nur Montags- Freitags asugelöst. 
+Bitte beachten: Die Nachricht wird nur Montags- Freitags asugelöst.  
 
 
 ## Reflexion
 
-Es hat mir echt viel spass gemacht diese Projekt zu verwirklichen. ich finde das Ganze Thema Cloud Computing aber auch unheimlich spannend weil es einfach sehr viel effizienter und Ressourcenschonender ist als das herkömmliche On Premise System. Vermutlich werden wir in Zukunft nur noch unsere Smartphones für die Bildübertragung nutzen und grössere Rechenleistung aus der Cloud beziehen. Immer potenter werdende Übertragungswege wie 5g und Glasfaser werden dies möglich machen.
+Es hat mir echt viel Spass gemacht diese Projekt zu verwirklichen. ich finde das Ganze Thema Cloud Computing aber auch unheimlich spannend weil es einfach sehr viel effizienter und Ressourcenschonender ist als das herkömmliche On Premise System. Vermutlich werden wir in Zukunft nur noch unsere Smartphones für die Bildübertragung nutzen und grössere Rechenleistung aus der Cloud beziehen. Immer potenter werdende Übertragungswege wie 5g und Glasfaser werden dies möglich machen.
 
+Zu Anfang des Projekts schien es erst kaum machbar ich musste erstmal wirkrlich viele Informationen einholen und auch meine Kenntnisse in Python etwas erweitern. Ich hatte lange fast gar nichts vor zu weisen, weil ich mich erstmal informieren musste über die einzelnen Dienste. Ich vertiefte mich in die jeweiligen Dokumentationen der Befehle um heraus zu finden welche Optionen und Parameter ich verwenden muss um das Ziel zu erreichen und auch welche von den Parametern grundsätzlich benötigt werden. 
 
+Abschliessend kann ich sagen das ich unheimlich viel profitiert habe von dem Projekt da ich sehr viel dazu gelernt habe in Python, Bash-Skripts, AWS CLI und den verwendeten AWS Diensten. 
