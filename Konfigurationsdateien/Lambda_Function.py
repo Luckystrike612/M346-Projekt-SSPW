@@ -12,7 +12,7 @@ logger.setLevel(logging.INFO)
 sns_client = boto3.client('sns')
 s3_client = boto3.client('s3')
 
-TOPIC_ARN = "arn:aws:sns:us-east-1:524282514575:testforsspw"
+TOPIC_ARN = "Hier Muss die ARN des Topics stehen"
 
 def send_notification(current_price, last_price, change, action):
     ''' 
@@ -23,7 +23,7 @@ def send_notification(current_price, last_price, change, action):
     subject = "Stock price change"
     try: 
         response = sns_client.publish(
-            TopicArn="arn:aws:sns:us-east-1:524282514575:testforsspw",
+            TopicArn="Hier Muss die ARN des Topics stehen",
             Message=message,
             Subject=subject,
         )['MessageId']
@@ -52,7 +52,7 @@ def get_stored_data(symbol):
     '''
     try:
         # Ermitteln des Inhalts der Datei aus dem S3-Bucket als Text
-        obj = s3_client.get_object(Bucket='testbucketforsspw', Key=f'{symbol}.json')
+        obj = s3_client.get_object(Bucket='Hier muss der Name des S3 Buckets stehen', Key=f'{symbol}.json')
         content = obj['Body'].read().decode('utf-8')
         return json.loads(content)
     except ClientError as e:
@@ -65,7 +65,7 @@ def store_data(symbol, data):
         TODO: Speichert die abgerufenen Daten im Bucket ab.
     '''
     content = json.dumps(data, sort_keys=True, indent=4)
-    response = s3_client.put_object(Body=str.encode(content), Bucket='testbucketforsspw', Key=f'{symbol}.json')
+    response = s3_client.put_object(Body=str.encode(content), Bucket='Hier muss der Name des S3 Buckets stehen', Key=f'{symbol}.json')
     return response
 
 def lambda_handler(event, context):

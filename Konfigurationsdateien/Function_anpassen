@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+
+
+# Zieldatei
+file="/Lambda_Function.py"
+
+# Zu ersetzender Satz
+old_string="Hier Muss die ARN des Topics stehen"
+
+# Neuer Satz
+new_string="${topic_arn}"
+
+# Satz ersetzen
+sed -i "s/$old_string/$new_string/g" "$file"

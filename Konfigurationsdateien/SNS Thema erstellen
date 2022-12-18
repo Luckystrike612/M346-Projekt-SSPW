@@ -2,8 +2,8 @@
 
 
 topic_name="SSPW"
-aws sns create-topic --name ${topic_name}
+topic_arn=`aws sns create-topic --name ${topic_name} --query TopicArn | tr -d '"'`
 
+email_adresse="lukas_truniger@outlook.com"
 
-
-
+aws sns subscribe --topic-arn ${topic_arn} --protocol email --notification-endpoint ${email_adresse}
