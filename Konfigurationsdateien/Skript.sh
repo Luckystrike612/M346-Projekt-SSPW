@@ -6,6 +6,7 @@
 # Version:	    1.2
 # Datum: 	    22.12.2022
 #Letzte Änderung: Einfügen der Intervall Änderungs-Variable
+sudo -R chmod u+rwx .
 
 sudo apt-get install zip
 
@@ -72,8 +73,6 @@ zip Lambda_Function.zip Lambda_Function.py
 
 
 
-
-
 #Mit Diesem Befehl wird der Lambda layer erstellt.
 aws lambda delete-layer-version --layer-name ${layer_name} --version-number 1
 layer_arn=`aws lambda publish-layer-version --layer-name ${layer_name} --zip-file fileb://requests-layer.zip --query LayerVersionArn | tr -d '"'`
@@ -88,13 +87,46 @@ Lambda_Arn=`aws lambda create-function --function-name ${lambda_f_name} --zip-fi
 #Hier wird die EventBridge Regel erstellt. Es wird definiert wie oft bzw. wann die Funktion bzw. das was an diese Regel angehängt ist ausgeführt werden soll.
 Rule_Arn=`aws events put-rule --schedule-expression "cron(${sns_intervall})" --name ${rule_name} --query RuleArn | tr -d '"'`
 
+
 #Der Regel wird hier die Berechtigung erteilt die Lambda Funktion auszuführen
 aws lambda add-permission --function-name ${lambda_f_name} --statement-id  ${rule_name} --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn ${Rule_Arn}
+
 #Nun wird die Regel der Funktion zugeordnet.
 aws events put-targets --rule ${rule_name} --targets "Id"="66","Arn"="${Lambda_Arn}"
+
 #Mit dem Subscribe wird nun abnonniert und die Meldungen an die genannten Email Adressen versendet.
 aws sns subscribe --topic-arn ${topic_arn} --protocol email --notification-endpoint ${email_adresse}
 
 
+
 aws s3 rb s3://${s3bucket_name} --force
 aws s3 mb s3://${s3bucket_name} --region us-east-1
+
+
+#Python Code wird wieder in den Ursprung zurückgesetzt
+# Zieldatei
+file=Lambda_Function.py
+
+# Zu ersetzender Satz
+old_string="${topic_arn}"
+
+# Neuer Satz
+new_string="Hier Muss die ARN des Topics stehen"
+
+# Satz ersetzen
+sed -i "s/$old_string/$new_string/g" "$file"
+
+
+# Zieldatei
+file=Lambda_Function.py
+
+# Zu ersetzender Satz
+old_string="${s3bucket_name}"
+
+# Neuer Satz
+new_string="Hier muss der Name des S3 Buckets stehen"
+
+# Satz ersetzen
+sed -i "s/$old_string/$new_string/g" "$file"
+
+rm Lambda_Function.zip
