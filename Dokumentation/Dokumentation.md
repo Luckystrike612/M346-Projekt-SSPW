@@ -61,7 +61,7 @@ Nachdem ich die ganze Umgebung erstellt hatte SNS, Lambda, Bucket und die Evenbr
 Da der Stock Price von Apple sich nicht so rege bewegt wie der einer Kryptowährung habe ich in der Lambda Funktion in der Zeile 82 current_stockprice durch eine Zahl ersetzt die vom momenentanen Stock Price abweicht. Innerhalb der nächsten Minute bekam ich dann eine Nachricht auf mein Handy und wusste somit das Ganze funktioniert.
 Eine bessere Methode zum testen ist das abändern der if Abfrage in der Zeile 90 von > 0.1 zu == 0 so sendet er eine Nachricht wenn sich nichts am Stock Preis ändert.
 
-![Alt-Text](https://res.cloudinary.com/dx2sgwe9o/image/upload/c_scale,w_100/v1671701056/Projekte/Projekt%20SSPW%20M346/Testfall_f%C3%BCr_Nachricht_ew8zn6.png)
+![Alt-Text](https://res.cloudinary.com/dx2sgwe9o/image/upload/c_scale,w_0.5/v1671701056/Projekte/Projekt%20SSPW%20M346/Testfall_f%C3%BCr_Nachricht_ew8zn6.png)
 
 Ich habe das Ganze Skript in Betrieb genommen und nach einigen Anpassungen funktioniert nun das Ganze Skript.
 
