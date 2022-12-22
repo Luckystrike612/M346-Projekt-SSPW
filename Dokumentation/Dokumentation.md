@@ -69,7 +69,7 @@ Nun hier noch ein Testfall wenn eben auf 0 abgeändert wird:
 
 Ich habe das Ganze Skript in Betrieb genommen und nach einigen Anpassungen funktioniert nun das Ganze Skript.
 
-Nach weiteren Testfällen auf einer anderen Umgebung hat sich mein Skript nicht richtig ausgeführt was im Endeffekt daran lag das zip darauf nicht installiert war.
+Nach weiteren Testfällen auf einer anderen Umgebung hat sich mein Skript nicht richtig ausgeführt... Nur wenn man den Inhalt des Skripts in die Command Line kopiert wird es korrekt ausgeführt.
 
 ## Betriebsanweisungen
 Um die Funktion in Betrieb zu nehmen sind folgende Schritte notwendig:
