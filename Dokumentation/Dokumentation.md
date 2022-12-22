@@ -59,9 +59,13 @@ SNS ist ein vollständig verwalteter Dienst mit dem man zuverlässig und schnell
 
 Nachdem ich die ganze Umgebung erstellt hatte SNS, Lambda, Bucket und die Evenbridge. Habe ich es in der Cloud Konsole getestet. 
 Da der Stock Price von Apple sich nicht so rege bewegt wie der einer Kryptowährung habe ich in der Lambda Funktion in der Zeile 82 current_stockprice durch eine Zahl ersetzt die vom momenentanen Stock Price abweicht. Innerhalb der nächsten Minute bekam ich dann eine Nachricht auf mein Handy und wusste somit das Ganze funktioniert.
-Eine bessere Methode zum testen ist das abändern der if Abfrage in der Zeile 90 von > 0.1 zu == 0 so sendet er eine Nachricht wenn sich nichts am Stock Preis ändert.
+Eine bessere Methode zum testen ist das abändern der if Abfrage in der Zeile 90 von > 0.1 zu == 0 so sendet er eine Nachricht wenn sich nichts am Stock Preis ändert. würde natürlich auch funktionieren wenn man es so modifiziert das es gesendet wird wenn die Änderung kleiner ist.
 
-![Alt-Text](https://res.cloudinary.com/dx2sgwe9o/image/upload/v1671701056/Projekte/Projekt%20SSPW%20M346/Testfall_f%C3%BCr_Nachricht_ew8zn6.png)
+![TestfallinLambda](https://res.cloudinary.com/dx2sgwe9o/image/upload/v1671701056/Projekte/Projekt%20SSPW%20M346/Testfall_f%C3%BCr_Nachricht_ew8zn6.png)
+
+Nun hier noch ein Testfall wenn eben auf 0 abgeändert wird:
+
+![testnachrichtdurchmanipulation_code](https://res.cloudinary.com/dx2sgwe9o/image/upload/v1671702246/Projekte/Projekt%20SSPW%20M346/testfall_auf0.0_ge%C3%A4ndert_xsoi1o.png)
 
 Ich habe das Ganze Skript in Betrieb genommen und nach einigen Anpassungen funktioniert nun das Ganze Skript.
 
