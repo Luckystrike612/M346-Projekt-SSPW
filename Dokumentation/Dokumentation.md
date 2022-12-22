@@ -79,7 +79,7 @@ Um die Funktion in Betrieb zu nehmen sind folgende Schritte notwendig:
 4. Das Skript ausführen, indem man das Ganze Skript in die Command Line kopiert! Aufruf über bash funktioniert nicht. wenn nun alles geklappt hat und richtig ausgeführt wurde ist die Funktion erstellt und sie sollten eine Nachricht an die Email Adresse erhalten, welche Sie in dem Skript angegeben haben. Darin ist ein Bestätigungslink, klicken Sie auf diesen.
 5. Nun ist alles fertig und die Benachrichtigung aktiviert wenn sich die Aktie um mehr als 0.1 Prozent Punkte ändert kriegen Sie eine Nachricht.
 
-Bitte beachten: Die Nachricht wird nur Montags- Freitags asugelöst.  
+Bitte beachten: Die Nachricht wird nur Montags- Freitags ausgelöst.  
 
 
 ## Reflexion
