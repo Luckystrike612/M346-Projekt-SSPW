@@ -18,7 +18,7 @@ Man kann daher von überall her auf die IDE zugreifen sofern man Zugang zum AWS 
 Die Dienste werden mittel AWS CLI in die Cloud deployed. Cloud9 hat die CLI bereits integriert.
 
 #### MS Visual Studio Code
-Das Meite habe ich aus Bequemlichkeit mit VSC erstellt.
+Das Meiste habe ich aus Bequemlichkeit mit VSC erstellt.
 
 #### Github Desktop
 

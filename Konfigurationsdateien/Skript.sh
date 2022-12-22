@@ -3,8 +3,9 @@
 # Aufruf:	    bash Skript.sh
 # Beschreibung: Dieses Skript erstellt einen Stock Price Watch Dog in AWS Lambda.
 # Autor:	    Lukas Truniger
-# Version:	    1.1
+# Version:	    1.2
 # Datum: 	    22.12.2022
+#Letzte Änderung: Einfügen der Intervall Änderungs-Variable
 
 sudo apt-get install zip
 
@@ -12,6 +13,9 @@ sudo apt-get install zip
 
 #Hier wird der Name des Layers definiert. Kann man stehen lassen.
 layer_name="requests-layer"
+
+#Variable zur Änderungen der Nachrichtenintervalle:
+sns_intervall="0/1 * ? * MON-FRI *"
 
 #Hier der Name für die Funktion.
 lambda_f_name="SPWdog"
@@ -82,7 +86,7 @@ Lambda_Arn=`aws lambda create-function --function-name ${lambda_f_name} --zip-fi
 
 
 #Hier wird die EventBridge Regel erstellt. Es wird definiert wie oft bzw. wann die Funktion bzw. das was an diese Regel angehängt ist ausgeführt werden soll.
-Rule_Arn=`aws events put-rule --schedule-expression "cron(0/1 * ? * MON-FRI *)" --name ${rule_name} --query RuleArn | tr -d '"'`
+Rule_Arn=`aws events put-rule --schedule-expression "cron(${sns_intervall})" --name ${rule_name} --query RuleArn | tr -d '"'`
 
 #Der Regel wird hier die Berechtigung erteilt die Lambda Funktion auszuführen
 aws lambda add-permission --function-name ${lambda_f_name} --statement-id  ${rule_name} --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn ${Rule_Arn}
