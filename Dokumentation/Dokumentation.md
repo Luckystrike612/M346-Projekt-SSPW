@@ -76,7 +76,7 @@ Um die Funktion in Betrieb zu nehmen sind folgende Schritte notwendig:
 1. Die Dateien [Skript](https://github.com/Luckystrike612/M346-Projekt-SSPW/blob/97333a3e35a2dfcd46dc1b7ddc19d61cedf3f3ab/Konfigurationsdateien/Skript), [Lambda_Function](https://github.com/Luckystrike612/M346-Projekt-SSPW/blob/97333a3e35a2dfcd46dc1b7ddc19d61cedf3f3ab/Konfigurationsdateien/Lambda_Function.py) und [requests-layer.zip](https://github.com/Luckystrike612/M346-Projekt-SSPW/blob/97333a3e35a2dfcd46dc1b7ddc19d61cedf3f3ab/Konfigurationsdateien/requests-layer.zip) herunter laden oder via git pullen.
 2. Danach diese 3 Dateien in einem seperatem Ordner speichern (auf jeden Fall nicht im git Ordner so das die Änderungen nicht nachverfolgt werden).
 3. das Skript öffnen un die Variablen anpassen nach eigenem Wunsch.
-4. Das Skript ausführen, wenn nun alles geklappt hat und richtig ausgeführt wurde ist die Funktion erstellt und sie sollten eine Nachricht an die Email Adresse erhalten, welche Sie in dem Skript angegeben haben. Darin ist ein Bestätigungslink, klicken Sie auf diesen.
+4. Das Skript ausführen, indem man das Ganze Skript in die Command Line kopiert! Aufruf über bash funktioniert nicht. wenn nun alles geklappt hat und richtig ausgeführt wurde ist die Funktion erstellt und sie sollten eine Nachricht an die Email Adresse erhalten, welche Sie in dem Skript angegeben haben. Darin ist ein Bestätigungslink, klicken Sie auf diesen.
 5. Nun ist alles fertig und die Benachrichtigung aktiviert wenn sich die Aktie um mehr als 0.1 Prozent Punkte ändert kriegen Sie eine Nachricht.
 
 Bitte beachten: Die Nachricht wird nur Montags- Freitags asugelöst.  
