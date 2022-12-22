@@ -3,7 +3,7 @@
 # Aufruf:	    bash Skript.sh
 # Beschreibung: Dieses Skript erstellt einen Stock Price Watch Dog in AWS Lambda.
 # Autor:	    Lukas Truniger
-# Version:	    1.0
+# Version:	    1.1
 # Datum: 	    22.12.2022
 
 sudo apt-get install zip
