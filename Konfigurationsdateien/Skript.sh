@@ -4,7 +4,9 @@
 # Beschreibung: Dieses Skript erstellt einen Stock Price Watch Dog in AWS Lambda.
 # Autor:	    Lukas Truniger
 # Version:	    1.0
-# Datum: 	    18.12.2022
+# Datum: 	    22.12.2022
+
+sudo apt-get install zip
 
 #START-------Innerhalb dieses Fensters können die Parameter festgelegt werden---WICHTIG!!! Die Email Adresse muss definitiv angepassst werden.-----------------
 
@@ -21,7 +23,7 @@ rule_name="SSPWEvent"
 topic_name="SSPW"
 
 #Hier Bitte die Email Adresse angeben auf welcher die Funktion die Nachrichten schicken soll.
-email_adresse="Beispiel@beispiel.com" 
+email_adresse="Lukas_truniger@outlook.com" 
 
 #Der Name für den Bucket welcher den preis speichert. Er muss einzigartig sein und wird nicht öffentlich sein daher reicht eine wilde Kombination.
 #Falls ein Bucket mit diesem Namen bereits besteht wird er gelöscht also Vorsicht!
@@ -84,12 +86,8 @@ Rule_Arn=`aws events put-rule --schedule-expression "cron(0/1 * ? * MON-FRI *)" 
 
 #Der Regel wird hier die Berechtigung erteilt die Lambda Funktion auszuführen
 aws lambda add-permission --function-name ${lambda_f_name} --statement-id  ${rule_name} --action 'lambda:InvokeFunction' --principal events.amazonaws.com --source-arn ${Rule_Arn}
-
 #Nun wird die Regel der Funktion zugeordnet.
 aws events put-targets --rule ${rule_name} --targets "Id"="66","Arn"="${Lambda_Arn}"
-
-
-
 #Mit dem Subscribe wird nun abnonniert und die Meldungen an die genannten Email Adressen versendet.
 aws sns subscribe --topic-arn ${topic_arn} --protocol email --notification-endpoint ${email_adresse}
 

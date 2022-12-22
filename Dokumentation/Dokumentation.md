@@ -61,9 +61,11 @@ Nachdem ich die ganze Umgebung erstellt hatte SNS, Lambda, Bucket und die Evenbr
 Da der Stock Price von Apple sich nicht so rege bewegt wie der einer Kryptowährung habe ich in der Lambda Funktion in der Zeile 82 current_stockprice durch eine Zahl ersetzt die vom momenentanen Stock Price abweicht. Innerhalb der nächsten Minute bekam ich dann eine Nachricht auf mein Handy und wusste somit das Ganze funktioniert.
 Eine bessere Methode zum testen ist das abändern der if Abfrage in der Zeile 90 von > 0.1 zu == 0 so sendet er eine Nachricht wenn sich nichts am Stock Preis ändert.
 
+![Alt-Text](/testerfolgreich1712.png)
+
 Ich habe das Ganze Skript in Betrieb genommen und nach einigen Anpassungen funktioniert nun das Ganze Skript.
 
-Ich habe auf eine Dokumentation der Testläufe mittels Screenshot verzichtet da ich unzählige Testläufe gemacht habe, ich somit keinen speziellen auswählen wollte. Ein funktionierendes Skript am Ende ist um einiges Aussagekräftiger meiner Meinung nach. ;) 
+Nach weiteren Testfällen auf einer anderen Umgebung hat sich mein Skript nicht richtig ausgeführt was im Endeffekt daran lag das zip darauf nicht installiert war.
 
 ## Betriebsanweisungen
 Um die Funktion in Betrieb zu nehmen sind folgende Schritte notwendig:
