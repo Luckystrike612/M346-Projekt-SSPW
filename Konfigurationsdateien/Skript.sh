@@ -31,8 +31,11 @@ topic_name="SSPW"
 email_adresse="Lukas_truniger@outlook.com" 
 
 #Der Name für den Bucket welcher den preis speichert. Er muss einzigartig sein und wird nicht öffentlich sein daher reicht eine wilde Kombination.
-#Falls ein Bucket mit diesem Namen bereits besteht wird er gelöscht also Vorsicht!
-s3bucket_name="testttcsgdssfsd"
+#Falls ein Bucket mit diesem Namen bereits besteht wird er gelöscht also Vorsicht! Wenn Sie nicht in Besitz des Buckets sind muss der Code ausgeführt werden mit einem anderen Namen.
+s3bucket_name="jsglkasdsdfafsfsafdvsfeeeedgadsagvfdvfdsfd"
+
+#Je nach Account muss man noch die Rolle auswählen die verwendet werden soll. !!! Eine mit Lambda Berechtigungen!!!
+iam_role="arn:aws:iam::524282514575:role/LabRole"
 
 #ENDE-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -81,7 +84,7 @@ layer_arn=`aws lambda publish-layer-version --layer-name ${layer_name} --zip-fil
 
 #Diese Erstellt die Lambda Funktion und lädt den Code hoch.
 aws lambda delete-function --function-name ${lambda_f_name}
-Lambda_Arn=`aws lambda create-function --function-name ${lambda_f_name} --zip-file fileb://Lambda_Function.zip --handler Lambda_Function.lambda_handler --runtime python3.9 --role arn:aws:iam::524282514575:role/LabRole --layers ${layer_arn} --query FunctionArn | tr -d '"'`
+Lambda_Arn=`aws lambda create-function --function-name ${lambda_f_name} --zip-file fileb://Lambda_Function.zip --handler Lambda_Function.lambda_handler --runtime python3.9 --role ${iam_role} --layers ${layer_arn} --query FunctionArn | tr -d '"'`
 
 
 #Hier wird die EventBridge Regel erstellt. Es wird definiert wie oft bzw. wann die Funktion bzw. das was an diese Regel angehängt ist ausgeführt werden soll.
@@ -128,5 +131,7 @@ new_string="Hier muss der Name des S3 Buckets stehen"
 
 # Satz ersetzen
 sed -i "s/$old_string/$new_string/g" "$file"
+
+
 
 rm Lambda_Function.zip
